@@ -5,6 +5,7 @@ class Customer {
     string name;
     int accountNumber;
     int balance;
+    //int* roi;
 
     public:
     //default constructor
@@ -12,6 +13,7 @@ class Customer {
         name = "Shraavani";
         accountNumber = 5;
         balance = 100;
+        //roi = new int[100];
     }
 
     //parametrized constructor
@@ -29,12 +31,19 @@ class Customer {
     }
 
     //inline constructor
-    inline Customer(string a, int b, int c): name(a), accountNumber(b), balance(c){
+    //inline Customer(string a, int b, int c): name(a), accountNumber(b), balance(c){
 
-    }
+    //}
 
     void display(){
         cout << name << accountNumber << balance << endl;
+    }
+
+    //copy constructor
+    Customer(Customer &B){
+        name = B.name;
+        accountNumber = B.accountNumber;
+        balance = B.balance;
     }
 };
 
@@ -45,4 +54,9 @@ int main(){
     A1.display();
     A2.display();
     A3.display();
+    Customer A4(A3);
+    A4.display();
+    Customer A5;
+    A5 = A3;
+    A5.display();
 }
