@@ -55,6 +55,7 @@ int main()
 {
     Customer A1("Shraavani", 1, 1000);
     Customer A2("Sukirti", 2, 1020);
+    A1.deposit(800);
+    A2.withdraw(500);
     Customer::accessStatic();
-    A1.displayTotal();
 }
